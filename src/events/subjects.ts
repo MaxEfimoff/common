@@ -13,5 +13,8 @@ export declare enum Subjects {
     BlogPostDeleted = "blogpost:deleted",
     GroupCreated = "group:created",
     GroupUpdated = "group:updated",
-    GroupDeleted = "group:deleted"
+    GroupDeleted = "group:deleted",
+    TeamCreated = "team:created",
+    TeamUpdated = "team:updated",
+    TeamDeleted = "team:deleted"
 }
