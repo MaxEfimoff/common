@@ -26,3 +26,6 @@ export * from './events/group/group-deleted-event';
 export * from './events/blogpost/blogpost-created-event';
 export * from './events/blogpost/blogpost-updated-event';
 export * from './events/blogpost/blogpost-deleted-event';
+export * from './events/team/team-created-event';
+export * from './events/team/team-updated-event';
+export * from './events/team/team-deleted-event';

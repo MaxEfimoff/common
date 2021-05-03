@@ -38,3 +38,6 @@ __exportStar(require("./events/group/group-deleted-event"), exports);
 __exportStar(require("./events/blogpost/blogpost-created-event"), exports);
 __exportStar(require("./events/blogpost/blogpost-updated-event"), exports);
 __exportStar(require("./events/blogpost/blogpost-deleted-event"), exports);
+__exportStar(require("./events/team/team-created-event"), exports);
+__exportStar(require("./events/team/team-updated-event"), exports);
+__exportStar(require("./events/team/team-deleted-event"), exports);
