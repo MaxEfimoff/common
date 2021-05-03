@@ -1,4 +1,4 @@
-export declare enum Subjects {
+export enum Subjects {
     UserCreated = "user:created",
     UserActivated = "user:activated",
     ProfileCreated = "profile:created",
