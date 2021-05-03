@@ -1,15 +1,41 @@
 import { Request, Response, NextFunction } from 'express';
-interface JWTRequest extends Request {
-    headers: {
-        authorization: string;
-    };
-    user?: UserPayload;
-}
+import jwt from 'jsonwebtoken';
+
 interface UserPayload {
-    id: string;
-    name: string;
-    iat: number;
-    exp: number;
+  id: string;
+  email: string;
 }
-declare const currentUser: (req: JWTRequest, res: Response, next: NextFunction) => void;
-export { currentUser };
+
+declare global {
+  namespace Express {
+    interface Request {
+      currentUser?: UserPayload;
+    }
+  }
+}
+
+interface UserRequest extends Request {
+    session: {
+      jwt: string
+    }
+  }
+
+export const currentUser = (
+  req: UserRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  if (!req.session?.jwt) {
+    return next();
+  }
+
+  try {
+    const payload = jwt.verify(
+      req.session.jwt,
+      process.env.JWT_KEY!
+    ) as UserPayload;
+    req.currentUser = payload;
+  } catch (err) {}
+
+  next();
+};
