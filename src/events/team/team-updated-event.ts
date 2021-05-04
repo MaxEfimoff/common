@@ -9,8 +9,6 @@ export interface TeamUpdatedEvent {
         profile_id: string;
         members?: object[];
         groups?: object[];
-        createdAt: number;
-        updatedAt?: number;
         version: number;
     };
 }
