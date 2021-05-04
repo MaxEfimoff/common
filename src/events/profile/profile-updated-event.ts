@@ -8,7 +8,7 @@ export interface ProfileUpdatedEvent {
         subscribedProfiles?: any[];
         subscribedBlogs?: [];
         joinedGroups?: [];
-        joinedTeams?: [];
+        joinedTeams?: any[];
         handle: string;
         avatar?: string;
         background?: string;
