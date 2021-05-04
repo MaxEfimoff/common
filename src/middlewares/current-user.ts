@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 interface UserPayload {
   id: string;
-  name: string;
+  email: string;
 }
 
 declare global {
@@ -25,9 +25,10 @@ export const currentUser = (
   res: Response,
   next: NextFunction
 ) => {
-  if (!req.session?.jwt) {
-    return next();
-  }
+  console.log(req)
+  // if (!req.session?.jwt) {
+  //   return next();
+  // }
 
   try {
     const payload = jwt.verify(
