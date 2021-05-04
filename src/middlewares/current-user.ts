@@ -23,14 +23,19 @@ export const currentUser = (
   res: Response,
   next: NextFunction
 ) => {
-  // if (!req.jwt) {
-  //   return next();
-  // }
+  const bearerHeader = req.headers['authorization'];
+  
+
+  if (!bearerHeader) {
+    return next();
+  }
 
   try {
-    console.log(req.authorization)
+    const bearer = bearerHeader.split(" ");
+    const token = bearer[1];
+    console.log(token);
     const payload = jwt.verify(
-      req.authorization,
+      token,
       process.env.JWT_KEY!
     ) as UserPayload;
     console.log('Payload', payload)
