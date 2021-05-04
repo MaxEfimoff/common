@@ -23,9 +23,9 @@ export const currentUser = (
   res: Response,
   next: NextFunction
 ) => {
-  if (!req.jwt) {
-    return next();
-  }
+  // if (!req.jwt) {
+  //   return next();
+  // }
 
   try {
     const payload = jwt.verify(
