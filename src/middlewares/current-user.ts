@@ -15,7 +15,7 @@ declare global {
 }
 
 interface UserRequest extends Request {
-  jwt: any
+  authorization: any
 }
 
 export const currentUser = (
@@ -28,8 +28,9 @@ export const currentUser = (
   // }
 
   try {
+    console.log(req.authorization)
     const payload = jwt.verify(
-      req.jwt,
+      req.authorization,
       process.env.JWT_KEY!
     ) as UserPayload;
     console.log('Payload', payload)
