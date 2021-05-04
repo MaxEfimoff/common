@@ -25,7 +25,6 @@ export const currentUser = (
 ) => {
   const bearerHeader = req.headers['authorization'];
   
-
   if (!bearerHeader) {
     return next();
   }
@@ -33,12 +32,12 @@ export const currentUser = (
   try {
     const bearer = bearerHeader.split(" ");
     const token = bearer[1];
-    console.log(token);
+    
     const payload = jwt.verify(
       token,
       process.env.JWT_KEY!
     ) as UserPayload;
-    console.log('Payload', payload)
+    req.currentUser = payload;
   } catch (err) {}
 
   next();
