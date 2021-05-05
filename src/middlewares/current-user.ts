@@ -6,12 +6,10 @@ interface UserPayload {
   name: string;
 }
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: UserPayload;
-    }
-  }
+interface UserRequest extends Request {
+  user: {
+    id: string;
+  };
 }
 
 interface UserRequest extends Request {
