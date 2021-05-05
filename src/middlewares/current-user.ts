@@ -35,8 +35,9 @@ export const currentUser = (
       token,
       process.env.JWT_KEY!
     ) as UserPayload;
+
     req.user = payload;
-    console.log('Payload', payload)
+    
   } catch (err) {}
 
   next();
