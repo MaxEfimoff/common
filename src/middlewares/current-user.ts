@@ -18,7 +18,7 @@ interface UserRequest extends Request {
   authorization: any
 }
 
-export const user = (
+export const currentUser = (
   req: UserRequest,
   res: Response,
   next: NextFunction
@@ -38,7 +38,7 @@ export const user = (
       process.env.JWT_KEY!
     ) as UserPayload;
     req.user = payload;
-    console.log('Req.user', payload)
+    console.log('Payload', payload)
   } catch (err) {}
 
   next();
