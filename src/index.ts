@@ -16,6 +16,7 @@ export * from './events/subjects';
 
 export * from './events/user/user-activated-event';
 export * from './events/user/user-created-event';
+export * from './events/user/user-updated-event';
 export * from './events/profile/profile-created-event';
 export * from './events/profile/profile-updated-event';
 export * from './events/profile/profile-deleted-event';
