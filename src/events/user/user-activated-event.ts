@@ -2,7 +2,7 @@ import { Subjects } from '../subjects';
 export interface UserActivatedEvent {
     subject: Subjects.UserActivated;
     data: {
-        id: string;
+        id: number;
         email: string;
         name: string;
     };
