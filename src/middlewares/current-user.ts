@@ -13,7 +13,7 @@ interface UserRequest extends Request {
 }
 
 interface UserRequest extends Request {
-  authorization: any
+  authorization: any;
 }
 
 export const currentUser = (
@@ -22,22 +22,18 @@ export const currentUser = (
   next: NextFunction
 ) => {
   const bearerHeader = req.headers['authorization'];
-  
+
   if (!bearerHeader) {
     return next();
   }
 
   try {
-    const bearer = bearerHeader.split(" ");
+    const bearer = bearerHeader.split(' ');
     const token = bearer[1];
-    
-    const payload = jwt.verify(
-      token,
-      process.env.JWT_KEY!
-    ) as UserPayload;
+
+    const payload = jwt.verify(token, process.env.JWT_KEY!) as UserPayload;
 
     req.user = payload;
-    
   } catch (err) {}
 
   next();
