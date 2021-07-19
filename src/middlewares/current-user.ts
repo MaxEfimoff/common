@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 interface UserPayload {
   id: string;
   name: string;
+  role: string;
 }
 
 interface UserRequest extends Request {
