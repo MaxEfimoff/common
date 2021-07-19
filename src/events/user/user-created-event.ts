@@ -6,6 +6,5 @@ export interface UserCreatedEvent {
     email: string;
     name: string;
     version: number;
-    role: string;
   };
 }
