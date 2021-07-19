@@ -9,6 +9,8 @@ export * from './middlewares/current-user';
 export * from './middlewares/error-handler';
 export * from './middlewares/require-auth';
 export * from './middlewares/validate-request';
+export * from './middlewares/is-admin';
+export * from './middlewares/is-superadmin';
 
 export * from './events/base-publisher';
 export * from './events/base-listener';
