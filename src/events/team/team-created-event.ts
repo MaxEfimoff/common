@@ -5,7 +5,7 @@ export interface TeamCreatedEvent {
     id: string;
     title: string;
     profile_id: string;
-    members: [];
+    members: any[];
     version: number;
   };
 }
