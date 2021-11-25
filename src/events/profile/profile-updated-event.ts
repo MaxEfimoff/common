@@ -4,10 +4,10 @@ export interface ProfileUpdatedEvent {
   data: {
     id: string;
     user_id?: string;
-    subscribers?: [];
+    subscribers?: any[];
     subscribedProfiles?: any[];
-    subscribedBlogs?: [];
-    joinedGroups?: [];
+    subscribedBlogs?: any[];
+    joinedGroups?: any[];
     joinedTeams?: any[];
     handle?: string;
     avatar?: string;
